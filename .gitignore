@@ -1,0 +1,9 @@
+-copilot.log
+cache
+csvs
+exports
+venv
+__pycache__
+chroma_db
+pandasai.log
+.cursorignore

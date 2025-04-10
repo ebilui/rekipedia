@@ -1,12 +1,16 @@
-from embedder import collection
+from chromadb import PersistentClient
 
-print(collection.count())
-# コレクション内のすべてのデータを取得
-results = collection.get()
+client = PersistentClient(path="./chroma_db")
+collection = client.get_collection("rekipedia")
 
-if results is None or not results.get("ids"):
-    print("🚨 データが見つかりませんでした。")
-else:
-    # ID, ドキュメント（テキスト）、埋め込みベクトルを確認
-    print("📄 IDs:", results["ids"])
-    print("📜 Documents:", results["documents"])
+data = collection.get()
+
+sources = set(
+    m["source"]
+    for m in data["metadatas"]
+    if m is not None and "source" in m
+)
+
+print("Sources in collection:")
+for s in sources:
+    print(s)

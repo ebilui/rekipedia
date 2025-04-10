@@ -274,7 +274,7 @@ def clean_dataframe_and_save(df, output_path):
 
 
 def process_csv_from_file(csv_path, chunk_size=800, overlap=100):
-    df = pd.read_csv(csv_path, header=None)
+    df = pd.read_csv(csv_path, header=None, encoding="utf-8")
     return process_csv_file(df, chunk_size=chunk_size, overlap=overlap)
 
 # CLI実行用
@@ -285,5 +285,5 @@ if __name__ == "__main__":
         exit()
 
     chunks = process_csv_from_file(csv_path)
-    for i, chunk in enumerate(chunks):
-        print(f"\n--- Chunk {i + 1} ---\n{chunk}")
+    # for i, chunk in enumerate(chunks):
+    #     print(f"\n--- Chunk {i + 1} ---\n{chunk}")

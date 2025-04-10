@@ -7,6 +7,13 @@
 このプロジェクトを実行するには、以下のパッケージをインストールする必要があります。以下のコマンドを実行してください。
 
 ```bash
+# 仮想環境を作成
+python -m venv venv
+
+# 仮想環境をアクティブ化
+source venv/bin/activate
+
+# 必要なパッケージをインストール
 pip install flask pandas langchain langchain-experimental openai sentence-transformers chromadb
 ```
 

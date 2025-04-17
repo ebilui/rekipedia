@@ -14,7 +14,7 @@ python -m venv venv
 source venv/bin/activate
 
 # 必要なパッケージをインストール
-pip install flask pandas langchain langchain-experimental openai sentence-transformers chromadb
+pip install flask pandas langchain langchain-experimental openai sentence-transformers chromadb flask_socketio
 ```
 
 ## 環境変数の設定
